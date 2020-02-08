@@ -8,7 +8,7 @@ class CartItem extends Component {
         <h1>Item: {this.props.name}</h1>
 
         {this.props.isNeeded ? <button type="button">Share</button> : <button type="button" disabled>Share</button> }
-        <button type="button" onClick={alert('Asd')}>Trash</button>
+        <button type="button">Trash</button>
       </div>
     );
   }

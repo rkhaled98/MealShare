@@ -8,7 +8,7 @@ class WishItem extends Component {
         <h1>Item: {this.props.name}</h1>
 
         {this.props.isNeeded ? <button type="button">Request</button> : <button type="button" disabled>Request</button> }
-        <button type="button" onClick={alert('Asd')}>Trash</button>
+        <button type="button">Trash</button>
       </div>
     );
   }
