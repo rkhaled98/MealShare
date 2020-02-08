@@ -27,7 +27,7 @@ const Welcome = (props) => {
     <div>Welcome
       <Counter />
       <Controls />
-      <CartItem name="NAME" img="../img/blackhole.jpg" />
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />
     </div>
   );
 };
