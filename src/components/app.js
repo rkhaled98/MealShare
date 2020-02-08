@@ -17,11 +17,8 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import { Switch } from 'react-router';
 import Counter from '../containers/counter';
 import Controls from '../containers/controls';
-<<<<<<< HEAD
 import CartItem from './CartItem';
-=======
 import SearchItem from './searchItem';
->>>>>>> ab94e77fc7187cb95c753499a6d044d233453763
 import Search from './search';
 
 const About = (props) => {
@@ -33,11 +30,8 @@ const Welcome = (props) => {
       <Search />
       <Counter />
       <Controls />
-<<<<<<< HEAD
       <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />
-=======
       <SearchItem name="NAME" />
->>>>>>> ab94e77fc7187cb95c753499a6d044d233453763
     </div>
   );
 };
