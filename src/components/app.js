@@ -20,6 +20,7 @@ import Controls from '../containers/controls';
 import SearchItem from './searchItem';
 import Search from './search';
 import RequestedItem from './requestedItems';
+import CartItem from './CartItem';
 
 const About = (props) => {
   return (
@@ -34,6 +35,7 @@ const Welcome = (props) => {
       <Search />
       <Counter />
       <Controls />
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />
       <SearchItem name="NAME" />
     </div>
   );
