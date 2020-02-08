@@ -17,14 +17,16 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import { Switch } from 'react-router';
 import Counter from '../containers/counter';
 import Controls from '../containers/controls';
-<<<<<<< HEAD
 import SearchItem from './searchItem';
-=======
 import Search from './search';
->>>>>>> 597eaa9c8fb92df8a2b2cf80293b823b64d6fe31
+import RequestedItem from './requestedItems';
 
 const About = (props) => {
-  return <div> All there is to know about me </div>;
+  return (
+    <div> All there is to know about me
+      <RequestedItem name="NAME" />
+    </div>
+  );
 };
 const Welcome = (props) => {
   return (
