@@ -41,6 +41,8 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.1",
+    "add": "^2.0.6",
     "axios": "^0.18.0",
     "jquery": "^3.4.0",
     "lodash.debounce": "^4.0.8",
@@ -50,6 +52,7 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "yarn": "^1.22.0"
   }
 }
