@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import { Switch } from 'react-router';
 import Counter from '../containers/counter';
 import Controls from '../containers/controls';
+import Search from './search';
 
 const About = (props) => {
   return <div> All there is to know about me </div>;
@@ -24,6 +25,7 @@ const About = (props) => {
 const Welcome = (props) => {
   return (
     <div>Welcome
+      <Search />
       <Counter />
       <Controls />
     </div>
@@ -38,8 +40,8 @@ const Nav = (props) => {
   return (
     <nav>
       <ul>
-        <li><NavLink to="/" exact>Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/" exact>Shop</NavLink></li>
+        <li><NavLink to="/about">Request</NavLink></li>
         <li><NavLink to="/test/id1">test id1</NavLink></li>
         <li><NavLink to="/test/id2">test id2</NavLink></li>
       </ul>
