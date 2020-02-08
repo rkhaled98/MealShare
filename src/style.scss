@@ -1,0 +1,48 @@
+body, html {
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#185061 100%);
+    height: 100%;
+  }
+
+  .logo {
+    background-image: url('img/blackhole.jpg');
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .active {
+    color: pink;
+  }
+
+  nav{
+    ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      li{
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        // margin-left: 10px;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        // cursor: e-resize;
+        // display: block;
+      }
+      li:hover{
+        color: white;
+        background-color: black;
+        a{
+          color: white;
+        }
+      }
+    }
+  }
