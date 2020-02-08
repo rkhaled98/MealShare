@@ -1,6 +1,6 @@
 body, html {
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#185061 100%);
+    background: #F8F7F6;
     height: 100%;
   }
 
@@ -13,10 +13,11 @@ body, html {
   }
 
   .active {
-    color: pink;
+    color: #5A5A5A;
   }
 
   nav{
+    background-color: #861F41;
     ul{
       list-style-type: none;
       margin: 0;
@@ -39,7 +40,7 @@ body, html {
       }
       li:hover{
         color: white;
-        background-color: black;
+        background-color: #5A5A5A;
         a{
           color: white;
         }

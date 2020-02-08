@@ -18,7 +18,10 @@ import { Switch } from 'react-router';
 import Welcome from './welcome';
 
 const About = (props) => {
-  return <div> All there is to know about me </div>;
+  return (
+    <div> All there is to know about me
+    </div>
+  );
 };
 
 const Test = (props) => {
