@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import { Switch } from 'react-router';
 import Counter from '../containers/counter';
 import Controls from '../containers/controls';
+import SearchItem from './searchItem';
 
 const About = (props) => {
   return <div> All there is to know about me </div>;
@@ -26,6 +27,7 @@ const Welcome = (props) => {
     <div>Welcome
       <Counter />
       <Controls />
+      <SearchItem name="NAME" />
     </div>
   );
 };
@@ -52,9 +54,9 @@ const FallBack = (props) => {
 };
 
 export default class App extends Component {
-//   constructor(props) {
-//     super(props);
-//   }
+  //   constructor(props) {
+  //     super(props);
+  //   }
   render() {
     return (
       <Router>
