@@ -20,6 +20,11 @@ import { Switch } from 'react-router';
 // import SearchItem from './searchItem';
 import Welcome from './welcome';
 // import Search from './search';
+// import Counter from '../containers/counter';
+// import Controls from '../containers/controls';
+// import CartItem from './CartItem';
+// import SearchItem from './searchItem';
+// import Search from './search';
 
 const About = (props) => {
   return <div> All there is to know about me </div>;
@@ -30,6 +35,17 @@ const About = (props) => {
 //       <Search />
 //       <Counter />
 //       <Controls />
+//       <SearchItem name="NAME" />
+//     </div>
+//   );
+// };
+// const Welcome = (props) => {
+//   return (
+//     <div>Welcome
+//       <Search />
+//       <Counter />
+//       <Controls />
+//       <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />
 //       <SearchItem name="NAME" />
 //     </div>
 //   );
