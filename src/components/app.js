@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import { Switch } from 'react-router';
 import Counter from '../containers/counter';
 import Controls from '../containers/controls';
+import CartItem from './CartItem';
 
 const About = (props) => {
   return <div> All there is to know about me </div>;
@@ -26,6 +27,7 @@ const Welcome = (props) => {
     <div>Welcome
       <Counter />
       <Controls />
+      <CartItem name="NAME" img="../img/blackhole.jpg" />
     </div>
   );
 };
