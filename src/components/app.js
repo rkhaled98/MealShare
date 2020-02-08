@@ -27,7 +27,10 @@ import Welcome from './welcome';
 // import Search from './search';
 
 const About = (props) => {
-  return <div> All there is to know about me </div>;
+  return (
+    <div> All there is to know about me
+    </div>
+  );
 };
 // const Welcome = (props) => {
 //   return (
