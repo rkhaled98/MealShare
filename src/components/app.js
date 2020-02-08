@@ -31,7 +31,7 @@ const Welcome = (props) => {
       <Counter />
       <Controls />
       <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />
-      <SearchItem name="NAME" />
+      <SearchItem name="Searched Item" />
     </div>
   );
 };
