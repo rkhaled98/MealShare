@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Search from './search';
 import SearchItem from './searchItem';
-
+import Cart from './cart';
+import CartItem from './CartItem';
 
 class Welcome extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     // this.renderSearchItems = this.renderSearchItems.bind(this);
-//   }
+  //   constructor(props) {
+  //     super(props);
+  //     // this.renderSearchItems = this.renderSearchItems.bind(this);
+  //   }
 
   // eslint-disable-next-line class-methods-use-this
   //   renderSearchItems(results) {
@@ -22,19 +23,22 @@ class Welcome extends React.Component {
   //   }
 
   render() {
+    const items = [
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
+    ];
+
     return (
       <div>
         <Search />
+        <Cart items={items} />
         {this.props.results.map(result => <SearchItem name={result.name} />)}
         {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
         {/* {this.renderSearchItems(this.props.results)} */}
       </div>
-    //   <div>
-    //     {this.props.name}
-    //     <button className="items" type="button" onClick="this.addCartItem">
-    //                 Add to Cart
-    //     </button>
-    //   </div>
+
     );
   }
 }
@@ -56,4 +60,4 @@ const mapStateToProps = reduxState => (
   }
 );
 
-export default withRouter(connect(mapStateToProps, { })(Welcome));
+export default withRouter(connect(mapStateToProps, {})(Welcome));
