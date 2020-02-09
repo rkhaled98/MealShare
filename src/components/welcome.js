@@ -5,6 +5,8 @@ import { withRouter } from 'react-router-dom';
 import Search from './search';
 import SearchItem from './searchItem';
 import * as db from '../services/datastore';
+import CartItem from './CartItem';
+import Cart from './cart';
 
 class Welcome extends React.Component {
   constructor(props) {
@@ -37,20 +39,23 @@ class Welcome extends React.Component {
   //   }
 
   render() {
+    const items = [
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
+    ];
+
     return (
       <div>
         <Search />
         {console.log(this.state.cart)}
         {this.props.results.map(result => <SearchItem key={result.sku} name={result.name} sku={result.sku} />)}
+        <Cart items={items} />
         {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
         {/* {this.renderSearchItems(this.props.results)} */}
       </div>
-    //   <div>
-    //     {this.props.name}
-    //     <button className="items" type="button" onClick="this.addCartItem">
-    //                 Add to Cart
-    //     </button>
-    //   </div>
+
     );
   }
 }
@@ -72,4 +77,4 @@ const mapStateToProps = reduxState => (
   }
 );
 
-export default withRouter(connect(mapStateToProps, { })(Welcome));
+export default withRouter(connect(mapStateToProps, {})(Welcome));
