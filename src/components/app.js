@@ -8,6 +8,7 @@ import { Switch } from 'react-router';
 import Cart from './cart';
 import Welcome from './welcome';
 import Request from './request';
+import Search from './search';
 
 const Test = (props) => {
   return <div> ID: {props.match.params.id} </div>;
@@ -22,7 +23,9 @@ const Nav = (props) => {
         }}
           src="Free_Sample_By_Wix.png"
           alt=" "
+          hspace="10px"
         />
+        <li><Search /></li>
         <li><NavLink to="/" exact>Shop</NavLink></li>
         <li><NavLink to="/cart" exact>Cart</NavLink></li>
         <li><NavLink to="/request">Request</NavLink></li>

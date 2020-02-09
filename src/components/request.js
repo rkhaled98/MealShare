@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import Search from './search';
 import WishItem from './WishItem';
 import * as db from '../services/datastore';
 
@@ -41,7 +40,6 @@ class Request extends React.Component {
     return (
       <div>
         <div>
-          <Search />
           {console.log(this.state.cart)}
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.props.results.map(result => <WishItem name={result.name} sku={result.sku} inSearch={1} />)}</div>
         </div>
