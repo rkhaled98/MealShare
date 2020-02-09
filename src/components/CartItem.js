@@ -7,7 +7,6 @@ import toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
 // TODO: IMG NOT WORKING
 class CartItem extends Component {
-
   handleRemove(itemId) {
     toastr.options = {
       positionClass: 'toast-top-right',
@@ -36,7 +35,7 @@ class CartItem extends Component {
       <div className="cart-item">
         <img src="../img/blackhole.jpg" alt="" />
         <p>Item: {this.props.name}</p>
-
+        {/* <TextField id="share" value={this.state.share} onChange={e => this.setState({ share: e.target.value }, () => console.log(this.state.share))} /> */}
         <Button id="share" onClick={() => this.props.handleShare(this.props.id)}>Share</Button>
 
         <Button id="remove" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>
