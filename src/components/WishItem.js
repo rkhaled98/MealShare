@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import toastr from 'toastr';
@@ -9,6 +10,10 @@ class WishItem extends Component {
   constructor(props) {
     super(props);
     this.addWish = this.addWish.bind(this);
+  }
+
+  handleRemove(itemId) {
+    firebase.database().ref('needed').child(itemId).remove();
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -35,12 +40,15 @@ class WishItem extends Component {
   render() {
     return (
       <div className="wish-item">
-        {/* {this.props.isNeeded ? <button type="button">Request</button> : <button type="button" disabled>Request</button> } */}
         <img src="../img/blackhole.jpg" alt="" />
         <p>Item: {this.props.name}</p>
+        {this.props.inSearch === 1
+          ? <Button id="wish" onClick={() => this.addWish(this.props.sku, this.props.name)}>Wish</Button>
+          : null}
 
-        <Button id="wish" onClick={() => this.addWish(this.props.sku, this.props.name)}>Wish</Button>
-        <Button id="remove">Remove from Wishlist</Button>
+        {this.props.stillNeeded === 1
+          ? <Button id="remove" onClick={() => this.handleRemove(this.props.id)}>Remove from Wishlist</Button>
+          : null}
       </div>
     );
   }
