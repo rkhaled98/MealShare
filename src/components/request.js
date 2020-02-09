@@ -55,15 +55,23 @@ class Request extends React.Component {
         <div> <h1>Needed</h1>
           <Search />
           {console.log(this.state.cart)}
-          {this.props.results.map(result => <WishItem name={result.name} sku={result.sku} inSearch={1} />)}
+          {this.props.results.map(result => <WishItem name={result.name} sku={result.sku} />)}
+          {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
+          {/* {this.renderSearchItems(this.props.results)} */}
         </div>
 
         <h1>Wish List</h1>
         {console.log(this.state.wishlist)}
-        {stillNeeded.map(item => <WishItem name={item.name} sku={item.sku} id={item.id} stillNeeded={1} />)}
+        {stillNeeded.map(item => item.name)}
         <div> <h1>Received</h1> </div>
-        {received.map(item => <WishItem name={item.name} sku={item.sku} />)}
+        {received.map(item => item.name)}
       </div>
+      //   <div>
+      //     {this.props.name}
+      //     <button className="items" type="button" onClick="this.addCartItem">
+      //                 Add to Cart
+      //     </button>
+      //   </div>
     );
   }
 }
