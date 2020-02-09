@@ -43,7 +43,7 @@ class Cart extends React.Component {
               this.state.wished.forEach((wishItem) => {
                 console.log(cartItem);
                 console.log(wishItem);
-                if (cartItem.sku === wishItem.sku) {
+                if (cartItem.sku === wishItem.sku && !wishItem.didReceive) {
                   count += 1;
                 }
               });
