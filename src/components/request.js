@@ -49,6 +49,7 @@ class Request extends React.Component {
       }
     });
 
+
     return (
       <div>
         <div> <h1>Needed</h1>
@@ -59,11 +60,11 @@ class Request extends React.Component {
           {/* {this.renderSearchItems(this.props.results)} */}
         </div>
 
-        <div> <h1>Received</h1>
-          {console.log(this.state.wishlist)}
-          {stillNeeded}
-          {received}
-        </div>
+        <h1>Wish List</h1>
+        {console.log(this.state.wishlist)}
+        {stillNeeded.map(item => item.name)}
+        <div> <h1>Received</h1> </div>
+        {received.map(item => item.name)}
       </div>
       //   <div>
       //     {this.props.name}
