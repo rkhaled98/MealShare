@@ -64,8 +64,8 @@ class SearchItem extends React.Component {
               {this.props.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
+              Price: {`$${Math.floor(Math.random() * 10)}.${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`}
+              {console.log(Math.random() * 10)}
             </Typography>
           </CardContent>
         </CardActionArea>

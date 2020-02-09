@@ -76,8 +76,7 @@ class WishItem extends Component {
               {this.props.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
+              {this.props.name}{this.props.name}{this.props.name}{this.props.name}{this.props.name}
             </Typography>
           </CardContent>
         </CardActionArea>
