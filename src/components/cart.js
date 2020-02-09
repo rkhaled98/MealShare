@@ -83,7 +83,7 @@ class Cart extends React.Component {
         <h1>CART</h1>
         {/* need to create cart items out of the display cart array */}
         {console.log(this.state.displayCart)}
-        {this.state.displayCart.map(item => <CartItem name={item.name} id={item.id} handleShare={this.handleShare} />)}
+        {this.state.displayCart.map(item => <CartItem name={item.name} count={item.count} id={item.id} handleShare={this.handleShare} />)}
         {/* {this.state.displayCart} */}
         <button type="button">
           Checkout Cart
