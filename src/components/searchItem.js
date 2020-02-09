@@ -3,6 +3,9 @@
 import React from 'react';
 import firebase from 'firebase';
 import Button from '@material-ui/core/Button';
+import toastr from 'toastr';
+import 'toastr/build/toastr.min.css';
+
 
 class SearchItem extends React.Component {
   constructor(props) {
@@ -11,6 +14,13 @@ class SearchItem extends React.Component {
   }
 
   addCart(sku, name) {
+    toastr.options = {
+      positionClass: 'toast-top-right',
+      hideDuration: 300,
+      timeOut: 6000,
+    };
+    toastr.clear();
+    setTimeout(() => toastr.success('Added to Cart'));
     const newKey = firebase.database().ref('cart').push().key;
     const newCartItem = {
       sku,

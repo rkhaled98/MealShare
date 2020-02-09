@@ -1,8 +1,10 @@
 /* eslint-disable guard-for-in */
 import React from 'react';
 import firebase from 'firebase';
+import toastr from 'toastr';
 import * as db from '../services/datastore';
 import CartItem from './CartItem';
+import 'toastr/build/toastr.min.css';
 
 
 class Cart extends React.Component {
@@ -59,6 +61,13 @@ class Cart extends React.Component {
   }
 
   handleShare(itemId) {
+    toastr.options = {
+      positionClass: 'toast-top-right',
+      hideDuration: 300,
+      timeOut: 6000,
+    };
+    toastr.clear();
+    setTimeout(() => toastr.success('Item Shared'));
     console.log(this.state.wished);
     const shared = this.state.cart.get(itemId);
     let toModify = null;
