@@ -1,6 +1,9 @@
+/* eslint-disable guard-for-in */
 import React from 'react';
+import firebase from 'firebase';
 import * as db from '../services/datastore';
 import CartItem from './CartItem';
+
 
 class Cart extends React.Component {
   constructor(props) {
@@ -10,7 +13,9 @@ class Cart extends React.Component {
       wished: new Map(),
       displayCart: [],
     };
+    this.handleShare = this.handleShare.bind(this);
   }
+
 
   // this.renderSearchItems = this.renderSearchItems.bind(this);
   componentDidMount() {
@@ -53,13 +58,32 @@ class Cart extends React.Component {
     });
   }
 
+  handleShare(itemId) {
+    console.log(this.state.wished);
+    const shared = this.state.cart.get(itemId);
+    let toModify = null;
+    // eslint-disable-next-line no-unused-vars
+    this.state.wished.forEach((entry) => {
+      if (!entry.didReceive && entry.sku === shared.sku) {
+        toModify = entry;
+      }
+    });
+
+    console.log(toModify);
+    if (toModify) {
+      const updates = {};
+      updates[`needed/${toModify.id}/didReceive`] = true;
+      firebase.database().ref().update(updates);
+    }
+  }
+
   render() {
     return (
       <div>
         <h1>CART</h1>
         {/* need to create cart items out of the display cart array */}
         {console.log(this.state.displayCart)}
-        {this.state.displayCart.map(item => <CartItem name={item.name} id={item.id} />)}
+        {this.state.displayCart.map(item => <CartItem name={item.name} id={item.id} handleShare={this.handleShare} />)}
         {/* {this.state.displayCart} */}
         <button type="button">
           Checkout Cart
