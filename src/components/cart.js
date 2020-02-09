@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable guard-for-in */
 import React from 'react';
 import firebase from 'firebase';
@@ -92,7 +93,7 @@ class Cart extends React.Component {
         <h1>CART</h1>
         {/* need to create cart items out of the display cart array */}
         {console.log(this.state.displayCart)}
-        {this.state.displayCart.map(item => <CartItem name={item.name} count={item.count} id={item.id} handleShare={this.handleShare} />)}
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.state.displayCart.map(item => <CartItem name={item.name} count={item.count} id={item.id} handleShare={this.handleShare} />)}</div>
         {/* {this.state.displayCart} */}
         <button type="button">
           Checkout Cart

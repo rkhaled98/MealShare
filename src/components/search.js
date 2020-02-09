@@ -15,10 +15,14 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: '',
+      searchTerm: 'Brick',
       //   searchResponse: [],
     };
     this.load = this.load.bind(this);
+  }
+
+  componentDidMount() {
+    this.load();
   }
 
   load() {
