@@ -1,7 +1,8 @@
+/* eslint-disable global-require */
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 import firebase from 'firebase';
-// import * as db from '../services/datastore';
+import Button from '@material-ui/core/Button';
 
 class SearchItem extends React.Component {
   constructor(props) {
@@ -24,10 +25,11 @@ class SearchItem extends React.Component {
   render() {
     return (
       <div>
+        <img src={require('../img/placeholder.png')} alt="" />
         {this.props.name}
-        <button className="items" type="button" onClick={() => this.addCart(this.props.sku, this.props.name)}>
+        <Button className="items" variant="contained" color="primary" onClick={() => this.addCart(this.props.sku, this.props.name)}>
           Add to Cart
-        </button>
+        </Button>
       </div>
     );
   }

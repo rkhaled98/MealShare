@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 // import TextField from '@material-ui/core/TextField';
@@ -18,12 +19,12 @@ class CartItem extends Component {
   render() {
     return (
       <div className="cart-item">
-        <img src="../img/blackhole.jpg" alt="" />
-        <p>Item: {this.props.name}</p>
+        <img src={require('../img/placeholder.png')} alt="" />
+        {this.props.name}
 
-        <Button id="share" onClick={() => this.props.handleShare(this.props.id)}>Share</Button>
+        <Button id="share" variant="contained" color="primary" onClick={() => this.props.handleShare(this.props.id)}>Share</Button>
 
-        <Button id="remove" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>
+        <Button id="remove" variant="contained" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>
 
         {this.props.count ? <p>This item is wished by {this.props.count} people.</p> : <p>This item is not wished by anybody.</p>}
       </div>

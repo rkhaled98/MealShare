@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import firebase from 'firebase';
@@ -31,14 +32,14 @@ class WishItem extends Component {
   render() {
     return (
       <div className="wish-item">
-        <img src="../img/blackhole.jpg" alt="" />
-        <p>Item: {this.props.name}</p>
+        <img src={require('../img/placeholder.png')} alt="" />
+        {this.props.name}
         {this.props.inSearch === 1
-          ? <Button id="wish" onClick={() => this.addWish(this.props.sku, this.props.name)}>Wish</Button>
+          ? <Button id="wish" variant="contained" color="primary" onClick={() => this.addWish(this.props.sku, this.props.name)}>Wish</Button>
           : null}
 
         {this.props.stillNeeded === 1
-          ? <Button id="remove" onClick={() => this.handleRemove(this.props.id)}>Remove from Wishlist</Button>
+          ? <Button id="remove" variant="contained" onClick={() => this.handleRemove(this.props.id)}>Remove from Wishlist</Button>
           : null}
       </div>
     );
