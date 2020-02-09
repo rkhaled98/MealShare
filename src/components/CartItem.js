@@ -9,14 +9,20 @@ class CartItem extends Component {
     firebase.database().ref('cart').child(itemId).remove();
   }
 
+  // handleShare(id, sku) {
+  //   const updates = {};
+  //   sku = updates[`notes/${noteId}/x`] = newX;
+  //   firebase.database().ref().update(updates);
+  // }
+
   render() {
     return (
       <div className="cart-item">
         <img src="../img/blackhole.jpg" alt="" />
         <p>Item: {this.props.name}</p>
 
-        {/* <TextField id="share" value={this.state.share} onChange={e => this.setState({ share: e.target.value }, () => console.log(this.state.share))} /> */}
-        <Button id="share">Share</Button>
+        <TextField id="share" value={this.state.share} onChange={e => this.setState({ share: e.target.value }, () => console.log(this.state.share))} />
+        <Button id="share" onClick={() => this.props.handleShare(this.props.id)}>Share</Button>
 
         <Button id="remove" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>
 
