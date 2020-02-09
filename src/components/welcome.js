@@ -32,6 +32,7 @@ class Welcome extends React.Component {
 
     return (
       <div>
+        <CartItem />
         <Search />
         <Cart items={items} />
         {this.props.results.map(result => <SearchItem name={result.name} />)}

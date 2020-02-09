@@ -15,16 +15,7 @@ import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import { Switch } from 'react-router';
-// import Counter from '../containers/counter';
-// import Controls from '../containers/controls';
-// import SearchItem from './searchItem';
 import Welcome from './welcome';
-// import Search from './search';
-// import Counter from '../containers/counter';
-// import Controls from '../containers/controls';
-// import CartItem from './CartItem';
-// import SearchItem from './searchItem';
-// import Search from './search';
 
 const About = (props) => {
   return (
@@ -32,27 +23,6 @@ const About = (props) => {
     </div>
   );
 };
-// const Welcome = (props) => {
-//   return (
-//     <div>Welcome
-//       <Search />
-//       <Counter />
-//       <Controls />
-//       <SearchItem name="NAME" />
-//     </div>
-//   );
-// };
-// const Welcome = (props) => {
-//   return (
-//     <div>Welcome
-//       <Search />
-//       <Counter />
-//       <Controls />
-//       <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />
-//       <SearchItem name="NAME" />
-//     </div>
-//   );
-// };
 
 const Test = (props) => {
   return <div> ID: {props.match.params.id} </div>;
