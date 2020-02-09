@@ -3,26 +3,28 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 // import firebase from 'firebase';
 import Search from './search';
-import SearchItem from './searchItem';
+import WishItem from './WishItem';
 import * as db from '../services/datastore';
 
-class Welcome extends React.Component {
+class Request extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cart: new Map(),
+      needed: new Map(),
     };
     // this.renderSearchItems = this.renderSearchItems.bind(this);
   }
 
   componentDidMount() {
-    db.fetchCart((cart) => {
-      const myMap = new Map();
-      for (const key of Object.keys(cart)) {
-        const cartItem = cart[key];
-        myMap.set(key, cartItem);
+    db.fetchNeeded((needed) => {
+      if (needed) {
+        const myMap = new Map();
+        for (const key of Object.keys(needed)) {
+          const needItem = needed[key];
+          myMap.set(key, needItem);
+        }
+        this.setState({ needed: myMap }, () => console.log(this.state.needed));
       }
-      this.setState({ cart: myMap }, () => console.log(this.state.cart));
     });
   }
 
@@ -41,7 +43,7 @@ class Welcome extends React.Component {
       <div>
         <Search />
         {console.log(this.state.cart)}
-        {this.props.results.map(result => <SearchItem key={result.sku} name={result.name} sku={result.sku} />)}
+        {this.props.results.map(result => <WishItem name={result.name} sku={result.sku} />)}
         {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
         {/* {this.renderSearchItems(this.props.results)} */}
       </div>
@@ -72,4 +74,4 @@ const mapStateToProps = reduxState => (
   }
 );
 
-export default withRouter(connect(mapStateToProps, { })(Welcome));
+export default withRouter(connect(mapStateToProps, {})(Request));

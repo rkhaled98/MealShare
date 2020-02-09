@@ -18,7 +18,9 @@ import { Switch } from 'react-router';
 // import Counter from '../containers/counter';
 // import Controls from '../containers/controls';
 // import SearchItem from './searchItem';
+// import Cart from './cart'
 import Welcome from './welcome';
+import Request from './request';
 // import Search from './search';
 // import Counter from '../containers/counter';
 // import Controls from '../containers/controls';
@@ -26,12 +28,12 @@ import Welcome from './welcome';
 // import SearchItem from './searchItem';
 // import Search from './search';
 
-const About = (props) => {
-  return (
-    <div> All there is to know about me
-    </div>
-  );
-};
+// const About = (props) => {
+//   return (
+//     <div> All there is to know about me
+//     </div>
+//   );
+// };
 // const Welcome = (props) => {
 //   return (
 //     <div>Welcome
@@ -63,7 +65,8 @@ const Nav = (props) => {
     <nav>
       <ul>
         <li><NavLink to="/" exact>Shop</NavLink></li>
-        <li><NavLink to="/about">Request</NavLink></li>
+        {/* <li><NavLink to="/cart" exact>Cart</NavLink></li> */}
+        <li><NavLink to="/request">Request</NavLink></li>
         <li><NavLink to="/test/id1">test id1</NavLink></li>
         <li><NavLink to="/test/id2">test id2</NavLink></li>
       </ul>
@@ -86,7 +89,8 @@ export default class App extends Component {
           <Nav />
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route path="/about" component={About} />
+            {/* <Route exact path="/cart" component={Cart} /> */}
+            <Route path="/request" component={Request} />
             <Route exact path="/test/:id" component={Test} />
             <Route component={FallBack} />
           </Switch>
