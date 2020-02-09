@@ -69,18 +69,7 @@ class CartItem extends Component {
       //     <img src={require('../img/placeholder.png')} alt="" />
       //   </div>
 
-    //   <div id="text-cart">
-    //     {this.props.name}
-    //     {this.props.count ? <p>This item is wished by {this.props.count} people.</p> : <p>This item is not wished by anybody.</p>}
-    //   </div>
 
-    //   <div id="buttons-cart">
-    //     <Button id="share" variant="contained" color="primary" onClick={() => this.props.handleShare(this.props.id)}>Share</Button>
-
-    //     <Button id="remove" variant="contained" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>
-    //   </div>
-
-    // </div>
     );
   }
 }
