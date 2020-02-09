@@ -64,6 +64,12 @@ const Nav = (props) => {
   return (
     <nav>
       <ul>
+        <img style={{
+          height: '50px', width: '50px', marginRight: 'auto',
+        }}
+          src="Free_Sample_By_Wix.png"
+          alt=" "
+        />
         <li><NavLink to="/" exact>Shop</NavLink></li>
         <li><NavLink to="/cart" exact>Cart</NavLink></li>
         <li><NavLink to="/request">Request</NavLink></li>
