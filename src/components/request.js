@@ -39,11 +39,14 @@ class Request extends React.Component {
   //   }
 
   render() {
+    const neededArr = [];
+    this.state.needed.forEach(need => neededArr.push(need.name));
     return (
       <div>
         <Search />
-        {console.log(this.state.cart)}
+        {console.log(this.state.needed)}
         {this.props.results.map(result => <WishItem name={result.name} sku={result.sku} />)}
+        {neededArr}
         {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
         {/* {this.renderSearchItems(this.props.results)} */}
       </div>
