@@ -25,7 +25,7 @@ class Search extends Component {
     const ROOT_URL = `https://api.wegmans.io/products/search?query=${this.state.searchTerm}&api-version=2018-10-18&subscription-key=51b36579158244a99436d0611e6197e7`;
     axios.get(`${ROOT_URL}`).then((r) => {
       console.log(r);
-      this.props.loadSearch(r.data.results);
+      this.props.loadSearch(r.data.results.slice(0, 10));
     //   this.setState({ searchResponse: r }, () => this.props.loadSearch());
     }).catch((e) => {
       console.log(e);
