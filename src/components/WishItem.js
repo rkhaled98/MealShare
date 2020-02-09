@@ -2,10 +2,8 @@
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import firebase from 'firebase';
-
-// import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-// TODO: IMG NOT WORKING
+
 class WishItem extends Component {
   constructor(props) {
     super(props);

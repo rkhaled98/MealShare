@@ -47,3 +47,22 @@ body, html {
       }
     }
   }
+
+#parent{
+    padding: 5px;
+  }
+
+#image{
+  padding: 1px;
+  float: left;
+}
+
+#text{
+    padding: 1px;
+    float: top;
+}
+
+#buttons{
+  padding: 1px;
+  float:bottom;
+}

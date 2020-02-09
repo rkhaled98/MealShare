@@ -1,10 +1,10 @@
 /* eslint-disable global-require */
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
-// import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import firebase from 'firebase';
-// TODO: IMG NOT WORKING
+import '../style.scss';
+
 class CartItem extends Component {
   handleRemove(itemId) {
     firebase.database().ref('cart').child(itemId).remove();
@@ -18,15 +18,22 @@ class CartItem extends Component {
 
   render() {
     return (
-      <div className="cart-item">
-        <img src={require('../img/placeholder.png')} alt="" />
-        {this.props.name}
+      <div className="cart-item" id="parent">
+        <div id="image">
+          <img src={require('../img/placeholder.png')} alt="" />
+        </div>
 
-        <Button id="share" variant="contained" color="primary" onClick={() => this.props.handleShare(this.props.id)}>Share</Button>
+        <div id="text">
+          {this.props.name}
+          {this.props.count ? <p>This item is wished by {this.props.count} people.</p> : <p>This item is not wished by anybody.</p>}
+        </div>
 
-        <Button id="remove" variant="contained" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>
+        <div id="buttons">
+          <Button id="share" variant="contained" color="primary" onClick={() => this.props.handleShare(this.props.id)}>Share</Button>
 
-        {this.props.count ? <p>This item is wished by {this.props.count} people.</p> : <p>This item is not wished by anybody.</p>}
+          <Button id="remove" variant="contained" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>
+        </div>
+
       </div>
     );
   }
