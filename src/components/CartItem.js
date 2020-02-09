@@ -26,7 +26,7 @@ class CartItem extends Component {
 
         <Button id="remove" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>
 
-        <p>{this.props.wished} of this item is wished</p>
+        {this.props.count ? <p>This item is wished by {this.props.count} people.</p> : <p>This item is not wished by anybody.</p>}
       </div>
     );
   }
