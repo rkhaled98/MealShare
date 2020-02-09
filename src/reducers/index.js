@@ -3,9 +3,11 @@
 import { combineReducers } from 'redux';
 
 import CountReducer from './count-reducer';
+import ResultReducer from './search-reducer';
 
 const rootReducer = combineReducers({
   count: CountReducer,
+  results: ResultReducer,
 });
 
 export default rootReducer;
