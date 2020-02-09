@@ -1,1 +1,1 @@
-# MealShare
+![Thicc Logo](https://lh5.googleusercontent.com/F_5aipkfaN_CLAhwPbrp3AF_UeypqtrP2h4nXOs8ULHMu9SXEmC8IvlpS5WjsUy93MQ-suJG8m-9htWbf-B9OhyK2SD2WhKvYVKlqZLkO84E3awu3ndCmYnwyJR4SbQl_O8H8WCz)

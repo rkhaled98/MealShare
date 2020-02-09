@@ -19,13 +19,13 @@ const Nav = (props) => {
     <nav>
       <ul>
         <img style={{
-          height: '50px', width: '50px', marginRight: 'auto',
+          height: '60px', width: '60px', marginRight: 'auto',
         }}
           src="Free_Sample_By_Wix.png"
-          alt=" "
           hspace="10px"
+          alt=" "
         />
-        <li><Search /></li>
+        <div className="searcher"><Search /></div>
         <li><NavLink to="/" exact>Shop</NavLink></li>
         <li><NavLink to="/cart" exact>Cart</NavLink></li>
         <li><NavLink to="/request">Request</NavLink></li>
