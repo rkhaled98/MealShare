@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import toastr from 'toastr';
+import 'toastr/build/toastr.min.css';
+
 // TODO: IMG NOT WORKING
 class CartItem extends Component {
   constructor(props) {
@@ -10,6 +13,17 @@ class CartItem extends Component {
       share: 0, // How many of the item will be shared
       wished: 0, // TOTAL Number of this item wished in the Database. "WishItem.js" has state "wish," which is the number of items that the person wants to wish
     };
+  }
+
+  onClick = () => {
+    this.count = this.count || 1;
+    toastr.options = {
+      positionClass: 'toast-top-full-width',
+      hideDuration: 300,
+      timeOut: 60000,
+    };
+    toastr.clear();
+    setTimeout(() => toastr.success('Test'), 300);
   }
 
   removeItem() {
@@ -27,7 +41,7 @@ class CartItem extends Component {
         <TextField id="share" value={this.state.share} onChange={e => this.setState({ share: e.target.value }, () => console.log(this.state.share))} />
         <Button id="share" disabled={this.state.share === 0}>Share</Button>
 
-        <Button id="remove" onClick={this.removeItem}>Remove from Cart</Button>
+        <Button id="remove" onClick={this.onClick}>Remove from Cart</Button>
 
         <p>{this.state.wished} of this item is wished</p>
       </div>
