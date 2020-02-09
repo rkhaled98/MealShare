@@ -54,7 +54,7 @@ class CartItem extends Component {
               {this.props.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              {this.props.count ? <p>This item is wished by {this.props.count} people.</p> : <p>This item is not wished by anybody.</p>}
+              {this.props.count ? <p>This item was wished for {this.props.count} times.</p> : <p>This item is not wished by anybody.</p>}
             </Typography>
           </CardContent>
         </CardActionArea>

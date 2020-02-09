@@ -50,6 +50,7 @@ class Search extends Component {
       <div>
         <TextField id="time" value={this.state.searchTerm} onChange={e => this.handleChange(e)} />
         <Button onClick={this.load}>Search!</Button>
+        <Button onClick={() => this.props.loadSearch([])}>Clear</Button>
       </div>
     );
   }

@@ -44,7 +44,7 @@ class Request extends React.Component {
               timeOut: 6000,
             };
             toastr.clear();
-            setTimeout(() => toastr.success('Item RECEIVED!!'));
+            setTimeout(() => toastr.success('Received Donation!!'));
           }
           return { needed: myMap };
         });
@@ -71,10 +71,10 @@ class Request extends React.Component {
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.props.results.map(result => <WishItem name={result.name} sku={result.sku} inSearch={1} />)}</div>
         </div>
 
-        <h1>Wish List</h1>
+        <h1 style={{ textAlign: 'center' }}>Wish List</h1>
         {console.log(this.state.wishlist)}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{stillNeeded.map(item => <WishItem name={item.name} sku={item.sku} id={item.id} stillNeeded={1} />)}</div>
-        <div> <h1>Received</h1> </div>
+        <h1 style={{ textAlign: 'center' }}>Received</h1>
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{received.map(item => <WishItem name={item.name} sku={item.sku} />)}</div>
       </div>
     );

@@ -90,7 +90,7 @@ class Cart extends React.Component {
   render() {
     return (
       <div>
-        <h1>CART</h1>
+        <h1 style={{ textAlign: 'center' }}>CART</h1>
         {/* need to create cart items out of the display cart array */}
         {console.log(this.state.displayCart)}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.state.displayCart.map(item => <CartItem name={item.name} count={item.count} id={item.id} handleShare={this.handleShare} />)}</div>
