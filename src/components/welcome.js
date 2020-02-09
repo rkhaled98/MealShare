@@ -5,8 +5,7 @@ import { withRouter } from 'react-router-dom';
 import Search from './search';
 import SearchItem from './searchItem';
 import * as db from '../services/datastore';
-import CartItem from './CartItem';
-import Cart from './cart';
+// import Cart from './cart';
 
 class Welcome extends React.Component {
   constructor(props) {
@@ -37,21 +36,14 @@ class Welcome extends React.Component {
   //     );
   //     console.log(results);
   //   }
-
+  // TEST
   render() {
-    const items = [
-      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} buy={1} />,
-      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} buy={1} />,
-      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} buy={1} />,
-      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} buy={1} />,
-    ];
-
     return (
       <div>
         <Search />
         {console.log(this.state.cart)}
         {this.props.results.map(result => <SearchItem key={result.sku} name={result.name} sku={result.sku} />)}
-        <Cart items={items} />
+        {/* <Cart items={items} /> */}
         {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
         {/* {this.renderSearchItems(this.props.results)} */}
       </div>
