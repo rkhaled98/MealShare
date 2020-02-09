@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-// import firebase from 'firebase';
-import Search from './search';
 import SearchItem from './searchItem';
 import * as db from '../services/datastore';
 // import Cart from './cart';
@@ -40,28 +38,13 @@ class Welcome extends React.Component {
   render() {
     return (
       <div>
-        <Search />
         {console.log(this.state.cart)}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.props.results.map(result => <SearchItem key={result.sku} name={result.name} sku={result.sku} />)}</div>
-        {/* <Cart items={items} /> */}
-        {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
-        {/* {this.renderSearchItems(this.props.results)} */}
       </div>
 
     );
   }
 }
-
-// const Welcome = (props) => {
-//     return (
-//         <div>Welcome
-//       <Search />
-//             <Counter />
-//             <Controls />
-//             <SearchItem name="NAME" />
-//         </div>
-//     );
-// };
 
 const mapStateToProps = reduxState => (
   {

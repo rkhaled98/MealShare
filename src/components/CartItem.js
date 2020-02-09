@@ -34,7 +34,6 @@ class CartItem extends Component {
     setTimeout(() => toastr.warning('Remove from Cart'));
     firebase.database().ref('cart').child(itemId).remove();
   }
-
   // handleShare(id, sku) {
   //   const updates = {};
   //   sku = updates[`notes/${noteId}/x`] = newX;
@@ -64,12 +63,15 @@ class CartItem extends Component {
           <Button onClick={() => this.handleRemove(this.props.id)} size="small" color="primary">Remove from Cart</Button>
         </CardActions>
       </Card>
+<<<<<<< HEAD
       // <div className="cart-item" id="parent-cart">
       //   <div id="image-cart">
       //     <img src={require('../img/placeholder.png')} alt="" />
       //   </div>
 
 
+=======
+>>>>>>> d901afdeaec716c3e69cc3ec74a8e55c97787839
     );
   }
 }
