@@ -45,16 +45,24 @@ class WishItem extends Component {
 
   render() {
     return (
-      <div className="wish-item">
-        <img src={require('../img/placeholder.png')} alt="" />
-        {this.props.name}
-        {this.props.inSearch === 1
-          ? <Button id="wish" variant="contained" color="primary" onClick={() => this.addWish(this.props.sku, this.props.name)}>Wish</Button>
-          : null}
+      <div className="wish-item" id="parent">
+        <div id="image">
+          <img src={require('../img/placeholder.png')} alt="" />
+        </div>
 
-        {this.props.stillNeeded === 1
-          ? <Button id="remove" variant="contained" onClick={() => this.handleRemove(this.props.id)}>Remove from Wishlist</Button>
-          : null}
+        <div id="text">
+          {this.props.name}
+        </div>
+
+        <div id="buttons">
+          {this.props.inSearch === 1
+            ? <Button id="wish" variant="contained" color="primary" onClick={() => this.addWish(this.props.sku, this.props.name)}>Wish</Button>
+            : <p>------------------------</p>}
+
+          {this.props.stillNeeded === 1
+            ? <Button id="remove" variant="contained" onClick={() => this.handleRemove(this.props.id)}>Remove from Wishlist</Button>
+            : <p>------------------------</p>}
+        </div>
       </div>
     );
   }

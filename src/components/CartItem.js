@@ -27,17 +27,17 @@ class CartItem extends Component {
 
   render() {
     return (
-      <div className="cart-item" id="parent">
-        <div id="image">
+      <div className="cart-item" id="parent-cart">
+        <div id="image-cart">
           <img src={require('../img/placeholder.png')} alt="" />
         </div>
 
-        <div id="text">
+        <div id="text-cart">
           {this.props.name}
           {this.props.count ? <p>This item is wished by {this.props.count} people.</p> : <p>This item is not wished by anybody.</p>}
         </div>
 
-        <div id="buttons">
+        <div id="buttons-cart">
           <Button id="share" variant="contained" color="primary" onClick={() => this.props.handleShare(this.props.id)}>Share</Button>
 
           <Button id="remove" variant="contained" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>
