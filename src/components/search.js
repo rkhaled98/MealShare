@@ -37,7 +37,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <TextField id="time" value={this.state.searchTerm} onChange={e => this.setState({ searchTerm: e.target.value }, () => console.log(this.state.searchTerm))} />
+        <TextField margin="dense" size="40px" id="time" value={this.state.searchTerm} onChange={e => this.setState({ searchTerm: e.target.value }, () => console.log(this.state.searchTerm))} />
         <Button onClick={this.load}>Search!</Button>
       </div>
     );

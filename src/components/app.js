@@ -24,9 +24,8 @@ const Nav = (props) => {
           src="Free_Sample_By_Wix.png"
           hspace="10px"
           alt=" "
-          hspace="10px"
         />
-        <li><Search /></li>
+        <div className="searcher"><Search /></div>
         <li><NavLink to="/" exact>Shop</NavLink></li>
         <li><NavLink to="/cart" exact>Cart</NavLink></li>
         <li><NavLink to="/request">Request</NavLink></li>
