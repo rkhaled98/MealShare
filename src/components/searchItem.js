@@ -24,12 +24,19 @@ class SearchItem extends React.Component {
 
   render() {
     return (
-      <div>
-        <img src={require('../img/placeholder.png')} alt="" />
-        {this.props.name}
-        <Button className="items" variant="contained" color="primary" onClick={() => this.addCart(this.props.sku, this.props.name)}>
-          Add to Cart
-        </Button>
+      <div id="parent">
+        <div id="image">
+          <img src={require('../img/placeholder.png')} alt="" />
+        </div>
+        <div id="text">
+          {this.props.name}
+          <p>------------------------</p>
+        </div>
+        <div id="buttons">
+          <Button className="items" variant="contained" color="primary" onClick={() => this.addCart(this.props.sku, this.props.name)}>
+            Add to Cart
+          </Button>
+        </div>
       </div>
     );
   }

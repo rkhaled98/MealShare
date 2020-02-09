@@ -5,7 +5,7 @@ body, html {
   }
 
   .logo {
-    background-image: url('img/blackhole.jpg');
+    background-image: url('img/placeholder.png');
     width: 100px;
     height: 100px;
     background-repeat: no-repeat;
@@ -48,21 +48,42 @@ body, html {
     }
   }
 
-#parent{
+#parent-cart{
     padding: 5px;
+    display: block;
   }
 
-#image{
+#image-cart{
   padding: 1px;
   float: left;
 }
 
-#text{
+#text-cart{
     padding: 1px;
     float: top;
 }
 
-#buttons{
+#buttons-cart{
   padding: 1px;
   float:bottom;
+}
+
+#parent{
+  padding: 5px;
+  display: block;
+}
+
+#image{
+padding: 1px;
+float: left;
+}
+
+#text{
+  padding: 1px;
+  float:top;
+}
+
+#buttons{
+padding: 1px;
+float:bottom;
 }
