@@ -1,6 +1,8 @@
+/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import firebase from 'firebase';
 // TODO: IMG NOT WORKING
 class CartItem extends Component {
   constructor(props) {
@@ -10,17 +12,15 @@ class CartItem extends Component {
     };
   }
 
-  // removeItem() {
-  //   this.setState({ buy: 0 });
-  // }
+  handleRemove(itemId) {
+    firebase.database().ref('cart').child(itemId).remove();
+  }
 
   render() {
     return (
       <div className="cart-item">
         <img src="../img/blackhole.jpg" alt="" />
         <p>Item: {this.props.name}</p>
-        <TextField id="buy" value={this.props.buy} />
-        <Button id="buy">Buy</Button>
 
         <TextField id="share" value={this.state.share} onChange={e => this.setState({ share: e.target.value }, () => console.log(this.state.share))} />
         <Button id="share" disabled={this.state.share === 0}>Share</Button>
