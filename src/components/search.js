@@ -16,7 +16,6 @@ class Search extends Component {
     super(props);
     this.state = {
       searchTerm: 'Brick',
-      //   searchResponse: [],
     };
     this.load = this.load.bind(this);
   }
@@ -30,7 +29,6 @@ class Search extends Component {
     axios.get(`${ROOT_URL}`).then((r) => {
       console.log(r);
       this.props.loadSearch(r.data.results.slice(0, 10));
-      //   this.setState({ searchResponse: r }, () => this.props.loadSearch());
     }).catch((e) => {
       console.log(e);
     });
