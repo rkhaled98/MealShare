@@ -42,7 +42,7 @@ class Welcome extends React.Component {
       <div>
         <Search />
         {console.log(this.state.cart)}
-        {this.props.results.map(result => <SearchItem key={result.sku} name={result.name} sku={result.sku} />)}
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.props.results.map(result => <SearchItem key={result.sku} name={result.name} sku={result.sku} />)}</div>
         {/* <Cart items={items} /> */}
         {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
         {/* {this.renderSearchItems(this.props.results)} */}

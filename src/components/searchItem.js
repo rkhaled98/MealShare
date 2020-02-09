@@ -3,6 +3,25 @@
 import React from 'react';
 import firebase from 'firebase';
 import Button from '@material-ui/core/Button';
+// import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+// import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/styles';
+
+
+const styles = theme => ({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 140,
+  },
+});
 
 class SearchItem extends React.Component {
   constructor(props) {
@@ -24,22 +43,48 @@ class SearchItem extends React.Component {
 
   render() {
     return (
-      <div id="parent">
-        <div id="image">
-          <img src={require('../img/placeholder.png')} alt="" />
-        </div>
-        <div id="text">
-          {this.props.name}
-          <p>------------------------</p>
-        </div>
-        <div id="buttons">
-          <Button className="items" variant="contained" color="primary" onClick={() => this.addCart(this.props.sku, this.props.name)}>
+      <Card className={this.props.classes.root} style={{ flexBasis: '33%', margin: '10px' }}>
+        <CardActionArea>
+          <CardMedia
+            className={this.props.classes.media}
+            image="../img/placeholder.png"
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {this.props.name}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+              across all continents except Antarctica
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            Share
+          </Button>
+          <Button onClick={() => this.addCart(this.props.sku, this.props.name)} size="small" color="primary">
             Add to Cart
           </Button>
-        </div>
-      </div>
+        </CardActions>
+      </Card>
+      // <div id="parent">
+      //   <div id="image">
+      //     <img src={require('../img/placeholder.png')} alt="" />
+      //   </div>
+      //   <div id="text">
+      //     {this.props.name}
+      //     <p>------------------------</p>
+      //   </div>
+      //   <div id="buttons">
+      //     <Button className="items" variant="contained" color="primary" onClick={() => this.addCart(this.props.sku, this.props.name)}>
+      //       Add to Cart
+      //     </Button>
+      //   </div>
+      // </div>
     );
   }
 }
 
-export default SearchItem;
+export default withStyles(styles)(SearchItem);
