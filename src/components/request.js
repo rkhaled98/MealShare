@@ -60,9 +60,9 @@ class Request extends React.Component {
 
         <h1>Wish List</h1>
         {console.log(this.state.wishlist)}
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>{stillNeeded.map(item => <WishItem name={item.name} sku={item.sku} id={item.id} stillNeeded={1} />)}</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{stillNeeded.map(item => <WishItem name={item.name} sku={item.sku} id={item.id} stillNeeded={1} />)}</div>
         <div> <h1>Received</h1> </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>{received.map(item => <WishItem name={item.name} sku={item.sku} />)}</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{received.map(item => <WishItem name={item.name} sku={item.sku} />)}</div>
       </div>
     );
   }
