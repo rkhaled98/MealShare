@@ -21,7 +21,7 @@ class Welcome extends React.Component {
   //     );
   //     console.log(results);
   //   }
-
+  // TEST
   render() {
     const items = [
       <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
