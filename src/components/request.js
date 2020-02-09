@@ -28,6 +28,7 @@ class Request extends React.Component {
     });
   }
 
+
   // eslint-disable-next-line class-methods-use-this
   //   renderSearchItems(results) {
   //     return (
