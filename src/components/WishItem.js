@@ -10,6 +10,10 @@ class WishItem extends Component {
     this.addWish = this.addWish.bind(this);
   }
 
+  handleRemove(itemId) {
+    firebase.database().ref('needed').child(itemId).remove();
+  }
+
   // eslint-disable-next-line class-methods-use-this
   addWish(sku, name) {
     const newKey = firebase.database().ref('needed').push().key;
