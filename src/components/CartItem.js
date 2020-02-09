@@ -5,13 +5,6 @@ import Button from '@material-ui/core/Button';
 import firebase from 'firebase';
 // TODO: IMG NOT WORKING
 class CartItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      share: 0, // How many of the item will be shared
-    };
-  }
-
   handleRemove(itemId) {
     firebase.database().ref('cart').child(itemId).remove();
   }
@@ -22,7 +15,7 @@ class CartItem extends Component {
         <img src="../img/blackhole.jpg" alt="" />
         <p>Item: {this.props.name}</p>
 
-        <TextField id="share" value={this.state.share} onChange={e => this.setState({ share: e.target.value }, () => console.log(this.state.share))} />
+        {/* <TextField id="share" value={this.state.share} onChange={e => this.setState({ share: e.target.value }, () => console.log(this.state.share))} /> */}
         <Button id="share">Share</Button>
 
         <Button id="remove" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>

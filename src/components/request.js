@@ -28,8 +28,6 @@ class Request extends React.Component {
     });
   }
 
-
-
   // eslint-disable-next-line class-methods-use-this
   //   renderSearchItems(results) {
   //     return (
@@ -41,22 +39,38 @@ class Request extends React.Component {
   //   }
 
   render() {
+    const stillNeeded = [];
+    const received = [];
+    this.state.needed.forEach((wishItem) => {
+      if (wishItem.didReceive === true) {
+        received.push(wishItem);
+      } else {
+        stillNeeded.push(wishItem);
+      }
+    });
+
     return (
       <div>
-        <div> <h1>a</h1>
+        <div> <h1>Needed</h1>
           <Search />
           {console.log(this.state.cart)}
           {this.props.results.map(result => <WishItem name={result.name} sku={result.sku} />)}
           {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
           {/* {this.renderSearchItems(this.props.results)} */}
         </div>
+
+        <div> <h1>Received</h1>
+          {console.log(this.state.wishlist)}
+          {stillNeeded}
+          {received}
+        </div>
       </div>
-    //   <div>
-    //     {this.props.name}
-    //     <button className="items" type="button" onClick="this.addCartItem">
-    //                 Add to Cart
-    //     </button>
-    //   </div>
+      //   <div>
+      //     {this.props.name}
+      //     <button className="items" type="button" onClick="this.addCartItem">
+      //                 Add to Cart
+      //     </button>
+      //   </div>
     );
   }
 }
