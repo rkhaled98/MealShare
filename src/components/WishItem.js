@@ -68,7 +68,7 @@ class WishItem extends Component {
         <CardActionArea>
           <CardMedia
             className={this.props.classes.media}
-            image="../img/placeholder.png"
+            image={`https://source.unsplash.com/1600x900/?${this.props.name}`}
             title="Contemplative Reptile"
           />
           <CardContent>

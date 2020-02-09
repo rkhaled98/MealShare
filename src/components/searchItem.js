@@ -56,7 +56,7 @@ class SearchItem extends React.Component {
         <CardActionArea>
           <CardMedia
             className={this.props.classes.media}
-            // image={`https://source.unsplash.com/1600x900/?${this.props.term}`}
+            image={`https://source.unsplash.com/1600x900/?${this.props.name}`}
             title="Contemplative Reptile"
           />
           <CardContent>
