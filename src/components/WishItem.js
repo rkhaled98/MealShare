@@ -3,6 +3,8 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import Button from '@material-ui/core/Button';
+import toastr from 'toastr';
+import 'toastr/build/toastr.min.css';
 
 // import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -30,11 +32,25 @@ class WishItem extends Component {
   }
 
   handleRemove(itemId) {
+    toastr.options = {
+      positionClass: 'toast-top-right',
+      hideDuration: 300,
+      timeOut: 6000,
+    };
+    toastr.clear();
+    setTimeout(() => toastr.warning('Remove from Wishlist'));
     firebase.database().ref('needed').child(itemId).remove();
   }
 
   // eslint-disable-next-line class-methods-use-this
   addWish(sku, name) {
+    toastr.options = {
+      positionClass: 'toast-top-right',
+      hideDuration: 300,
+      timeOut: 6000,
+    };
+    toastr.clear();
+    setTimeout(() => toastr.success('Wish Added'));
     const newKey = firebase.database().ref('needed').push().key;
     const neededItem = {
       sku,

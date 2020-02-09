@@ -4,9 +4,18 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import firebase from 'firebase';
 import '../style.scss';
+import toastr from 'toastr';
+import 'toastr/build/toastr.min.css';
 
 class CartItem extends Component {
   handleRemove(itemId) {
+    toastr.options = {
+      positionClass: 'toast-top-right',
+      hideDuration: 300,
+      timeOut: 6000,
+    };
+    toastr.clear();
+    setTimeout(() => toastr.warning('Remove from Cart'));
     firebase.database().ref('cart').child(itemId).remove();
   }
 

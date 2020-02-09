@@ -12,7 +12,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 // import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/styles';
-
+import toastr from 'toastr';
+import 'toastr/build/toastr.min.css';
 
 const styles = theme => ({
   root: {
@@ -23,6 +24,7 @@ const styles = theme => ({
   },
 });
 
+
 class SearchItem extends React.Component {
   constructor(props) {
     super(props);
@@ -30,6 +32,13 @@ class SearchItem extends React.Component {
   }
 
   addCart(sku, name) {
+    toastr.options = {
+      positionClass: 'toast-top-right',
+      hideDuration: 300,
+      timeOut: 6000,
+    };
+    toastr.clear();
+    setTimeout(() => toastr.success('Added to Cart'));
     const newKey = firebase.database().ref('cart').push().key;
     const newCartItem = {
       sku,
