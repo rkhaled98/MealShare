@@ -24,10 +24,10 @@ class Welcome extends React.Component {
 
   render() {
     const items = [
-      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
-      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
-      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
-      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} />,
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} buy={1} />,
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} buy={1} />,
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} buy={1} />,
+      <CartItem name="Banana" img="../img/blackhole.jpg" isNeeded={false} buy={1} />,
     ];
 
     return (
