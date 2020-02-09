@@ -16,7 +16,6 @@ class Search extends Component {
     super(props);
     this.state = {
       searchTerm: 'Brick',
-      //   searchResponse: [],
     };
     this.load = this.load.bind(this);
     this.handleChange = this.handleChange.bind(this);

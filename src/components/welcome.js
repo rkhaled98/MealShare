@@ -2,8 +2,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-// import firebase from 'firebase';
-import Search from './search';
 import SearchItem from './searchItem';
 import * as db from '../services/datastore';
 // import Cart from './cart';
@@ -13,7 +11,7 @@ class Welcome extends React.Component {
     super(props);
     this.state = {
       cart: new Map(),
-      term: '',
+      // term: '',
     };
     // this.renderSearchItems = this.renderSearchItems.bind(this);
   }
@@ -42,28 +40,19 @@ class Welcome extends React.Component {
   render() {
     return (
       <div>
-        <Search termChange={term => this.setState({ term })} />
-        {console.log(this.props.results)}
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.props.results.map(result => <SearchItem key={result.sku} name={result.name} sku={result.sku} term={this.state.term} />)}</div>
+        {/* <Search termChange={term => this.setState({ term })} /> */}
+        {/* {console.log(this.props.results)} */}
+        {/* <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.props.results.map(result => <SearchItem key={result.sku} name={result.name} sku={result.sku} term={this.state.term} />)}</div> */}
         {/* <Cart items={items} /> */}
         {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
         {/* {this.renderSearchItems(this.props.results)} */}
+        {console.log(this.state.cart)}
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.props.results.map(result => <SearchItem key={result.sku} name={result.name} sku={result.sku} />)}</div>
       </div>
 
     );
   }
 }
-
-// const Welcome = (props) => {
-//     return (
-//         <div>Welcome
-//       <Search />
-//             <Counter />
-//             <Controls />
-//             <SearchItem name="NAME" />
-//         </div>
-//     );
-// };
 
 const mapStateToProps = reduxState => (
   {
