@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-// import firebase from 'firebase';
 import Search from './search';
 import WishItem from './WishItem';
 import * as db from '../services/datastore';
@@ -12,7 +11,6 @@ class Request extends React.Component {
     this.state = {
       needed: new Map(),
     };
-    // this.renderSearchItems = this.renderSearchItems.bind(this);
   }
 
   componentDidMount() {
@@ -27,16 +25,6 @@ class Request extends React.Component {
       }
     });
   }
-
-  // eslint-disable-next-line class-methods-use-this
-  //   renderSearchItems(results) {
-  //     return (
-  //       <div>
-  //           this.props.res
-  //       </div>
-  //     );
-  //     console.log(results);
-  //   }
 
   render() {
     const stillNeeded = [];
@@ -67,17 +55,6 @@ class Request extends React.Component {
     );
   }
 }
-
-// const Welcome = (props) => {
-//     return (
-//         <div>Welcome
-//       <Search />
-//             <Counter />
-//             <Controls />
-//             <SearchItem name="NAME" />
-//         </div>
-//     );
-// };
 
 const mapStateToProps = reduxState => (
   {
