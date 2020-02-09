@@ -1,6 +1,8 @@
+/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import firebase from 'firebase';
-
+import toastr from 'toastr';
+import 'toastr/build/toastr.min.css';
 // import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 // TODO: IMG NOT WORKING
@@ -10,8 +12,20 @@ class WishItem extends Component {
     this.addWish = this.addWish.bind(this);
   }
 
+  handleRemove(itemId) {
+    firebase.database().ref('needed').child(itemId).remove();
+  }
+
   // eslint-disable-next-line class-methods-use-this
   addWish(sku, name) {
+    toastr.options = {
+      positionClass: 'toast-top-right',
+      hideDuration: 300,
+      timeOut: 3000,
+    };
+    toastr.clear();
+    setTimeout(() => toastr.success('Wish Added'));
+
     const newKey = firebase.database().ref('needed').push().key;
     const neededItem = {
       sku,
@@ -26,12 +40,15 @@ class WishItem extends Component {
   render() {
     return (
       <div className="wish-item">
-        {/* {this.props.isNeeded ? <button type="button">Request</button> : <button type="button" disabled>Request</button> } */}
         <img src="../img/blackhole.jpg" alt="" />
         <p>Item: {this.props.name}</p>
+        {this.props.inSearch === 1
+          ? <Button id="wish" onClick={() => this.addWish(this.props.sku, this.props.name)}>Wish</Button>
+          : null}
 
-        <Button id="wish" onClick={() => this.addWish(this.props.sku, this.props.name)}>Wish</Button>
-        <Button id="remove">Remove from Wishlist</Button>
+        {this.props.stillNeeded === 1
+          ? <Button id="remove" onClick={() => this.handleRemove(this.props.id)}>Remove from Wishlist</Button>
+          : null}
       </div>
     );
   }
