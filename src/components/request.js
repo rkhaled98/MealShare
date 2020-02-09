@@ -28,6 +28,8 @@ class Request extends React.Component {
     });
   }
 
+
+
   // eslint-disable-next-line class-methods-use-this
   //   renderSearchItems(results) {
   //     return (
@@ -41,11 +43,13 @@ class Request extends React.Component {
   render() {
     return (
       <div>
-        <Search />
-        {console.log(this.state.cart)}
-        {this.props.results.map(result => <WishItem name={result.name} sku={result.sku} />)}
-        {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
-        {/* {this.renderSearchItems(this.props.results)} */}
+        <div> <h1>a</h1>
+          <Search />
+          {console.log(this.state.cart)}
+          {this.props.results.map(result => <WishItem name={result.name} sku={result.sku} />)}
+          {/* {this.props.results === {} ? null : this.props.results.map(result => <SearchItem name={result.name} />)} */}
+          {/* {this.renderSearchItems(this.props.results)} */}
+        </div>
       </div>
     //   <div>
     //     {this.props.name}

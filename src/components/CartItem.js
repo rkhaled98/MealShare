@@ -23,9 +23,9 @@ class CartItem extends Component {
         <p>Item: {this.props.name}</p>
 
         <TextField id="share" value={this.state.share} onChange={e => this.setState({ share: e.target.value }, () => console.log(this.state.share))} />
-        <Button id="share" disabled={this.state.share === 0}>Share</Button>
+        <Button id="share">Share</Button>
 
-        <Button id="remove" onClick={this.removeItem}>Remove from Cart</Button>
+        <Button id="remove" onClick={() => this.handleRemove(this.props.id)}>Remove from Cart</Button>
 
         <p>{this.state.wished} of this item is wished</p>
       </div>
