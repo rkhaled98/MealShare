@@ -4,10 +4,12 @@ import { combineReducers } from 'redux';
 
 import CountReducer from './count-reducer';
 import ResultReducer from './search-reducer';
+import SearchReducer from './search-result';
 
 const rootReducer = combineReducers({
   count: CountReducer,
   results: ResultReducer,
+  searchTerm: SearchReducer,
 });
 
 export default rootReducer;

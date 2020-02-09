@@ -8,7 +8,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 // import { withRouter } from 'react-router-dom';
 // import config from '../config.json';
-import { loadSearch } from '../actions';
+import { loadSearch, loadSearchTerm } from '../actions';
 
 
 class Search extends Component {
@@ -18,10 +18,17 @@ class Search extends Component {
       searchTerm: 'Brick',
     };
     this.load = this.load.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     this.load();
+  }
+
+  handleChange(e) {
+    this.setState({ searchTerm: e.target.value });
+
+    // , () => this.props.loadSearchTerm(e.target.value));
   }
 
   load() {
@@ -29,6 +36,10 @@ class Search extends Component {
     axios.get(`${ROOT_URL}`).then((r) => {
       console.log(r);
       this.props.loadSearch(r.data.results.slice(0, 10));
+      this.props.termChange(this.state.searchTerm);
+      //
+
+      //   this.setState({ searchResponse: r }, () => this.props.loadSearch());
     }).catch((e) => {
       console.log(e);
     });
@@ -37,7 +48,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <TextField margin="dense" size="40px" id="time" value={this.state.searchTerm} onChange={e => this.setState({ searchTerm: e.target.value }, () => console.log(this.state.searchTerm))} />
+        <TextField id="time" value={this.state.searchTerm} onChange={e => this.handleChange(e)} />
         <Button onClick={this.load}>Search!</Button>
       </div>
     );
@@ -45,4 +56,4 @@ class Search extends Component {
 }
 
 
-export default (connect(null, { loadSearch })(Search));
+export default (connect(null, { loadSearch, loadSearchTerm })(Search));

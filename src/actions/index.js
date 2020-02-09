@@ -4,6 +4,7 @@ export const ActionTypes = {
   INCREMENT: 'INCREMENT',
   DECREMENT: 'DECREMENT',
   SEARCH_CHANGED: 'SEARCH_CHANGED',
+  SEARCH_TERM: 'SEARCH_TERM',
 };
 
 
@@ -26,10 +27,11 @@ export function loadSearch(results) {
     type: ActionTypes.SEARCH_CHANGED,
     payload: results,
   };
-  // return (dispatch) => {
-  //   return dispatch({
-  //     type: ActionTypes.SEARCH_CHANGED,
-  //     payload: results,
-  //   });
-  // };
+}
+
+export function loadSearchTerm(term) {
+  return {
+    type: ActionTypes.SEARCH_CHANGED,
+    payload: term,
+  };
 }
