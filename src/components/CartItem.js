@@ -34,11 +34,6 @@ class CartItem extends Component {
     setTimeout(() => toastr.warning('Remove from Cart'));
     firebase.database().ref('cart').child(itemId).remove();
   }
-  // handleShare(id, sku) {
-  //   const updates = {};
-  //   sku = updates[`notes/${noteId}/x`] = newX;
-  //   firebase.database().ref().update(updates);
-  // }
 
   render() {
     return (
@@ -66,5 +61,4 @@ class CartItem extends Component {
     );
   }
 }
-// export default CartItem;
 export default withStyles(styles)(CartItem);

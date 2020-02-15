@@ -3,13 +3,11 @@
 import React from 'react';
 import firebase from 'firebase';
 import Button from '@material-ui/core/Button';
-// import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-// import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/styles';
 import toastr from 'toastr';
@@ -65,7 +63,6 @@ class SearchItem extends React.Component {
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               Price: {`$${Math.floor(Math.random() * 10)}.${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`}
-              {console.log(Math.random() * 10)}
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -78,20 +75,6 @@ class SearchItem extends React.Component {
           </Button>
         </CardActions>
       </Card>
-      // <div id="parent">
-      //   <div id="image">
-      //     <img src={require('../img/placeholder.png')} alt="" />
-      //   </div>
-      //   <div id="text">
-      //     {this.props.name}
-      //     <p>------------------------</p>
-      //   </div>
-      //   <div id="buttons">
-      //     <Button className="items" variant="contained" color="primary" onClick={() => this.addCart(this.props.sku, this.props.name)}>
-      //       Add to Cart
-      //     </Button>
-      //   </div>
-      // </div>
     );
   }
 }

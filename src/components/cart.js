@@ -19,8 +19,6 @@ class Cart extends React.Component {
     this.handleShare = this.handleShare.bind(this);
   }
 
-
-  // this.renderSearchItems = this.renderSearchItems.bind(this);
   componentDidMount() {
     db.fetchCart((cart) => {
       const myMap = new Map();
@@ -30,22 +28,16 @@ class Cart extends React.Component {
       }
       this.setState({ cart: myMap }, () => {
         db.fetchNeeded((wished) => {
-          console.log(wished);
           const myMap2 = new Map();
           for (const key of Object.keys(wished)) {
             const wishedItem = wished[key];
             myMap2.set(key, wishedItem);
           }
-          console.log(myMap2);
           this.setState({ wished: myMap2 }, () => {
             const out = [];
             this.state.cart.forEach((cartItem) => {
-              console.log(cartItem);
-              console.log(this.state.wished);
               let count = 0;
               this.state.wished.forEach((wishItem) => {
-                console.log(cartItem);
-                console.log(wishItem);
                 if (cartItem.sku === wishItem.sku && !wishItem.didReceive) {
                   count += 1;
                 }
@@ -69,7 +61,6 @@ class Cart extends React.Component {
     };
     toastr.clear();
     setTimeout(() => toastr.success('Item Shared'));
-    console.log(this.state.wished);
     const shared = this.state.cart.get(itemId);
     let toModify = null;
     // eslint-disable-next-line no-unused-vars
@@ -79,7 +70,6 @@ class Cart extends React.Component {
       }
     });
 
-    console.log(toModify);
     if (toModify) {
       const updates = {};
       updates[`needed/${toModify.id}/didReceive`] = true;
@@ -91,10 +81,7 @@ class Cart extends React.Component {
     return (
       <div>
         <h1 style={{ textAlign: 'center' }}>CART</h1>
-        {/* need to create cart items out of the display cart array */}
-        {console.log(this.state.displayCart)}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.state.displayCart.map(item => <CartItem name={item.name} count={item.count} id={item.id} handleShare={this.handleShare} />)}</div>
-        {/* {this.state.displayCart} */}
         <button type="button">
           Checkout Cart
         </button>

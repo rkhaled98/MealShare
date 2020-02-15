@@ -6,13 +6,11 @@ import Button from '@material-ui/core/Button';
 import toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
 
-// import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-// import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/styles';
 
@@ -76,7 +74,7 @@ class WishItem extends Component {
               {this.props.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              {this.props.name}{this.props.name}{this.props.name}{this.props.name}{this.props.name}
+              {this.props.name} From Wegman&apos;s
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -92,25 +90,6 @@ class WishItem extends Component {
           }
         </CardActions>
       </Card>
-      // <div className="wish-item" id="parent">
-      //   <div id="image">
-      //     <img src={require('../img/placeholder.png')} alt="" />
-      //   </div>
-
-    //   <div id="text">
-    //     {this.props.name}
-    //   </div>
-
-    //   <div id="buttons">
-    //     {this.props.inSearch === 1
-    //       ? <Button id="wish" variant="contained" color="primary" onClick={() => this.addWish(this.props.sku, this.props.name)}>Wish</Button>
-    //       : <p>------------------------</p>}
-
-    //     {this.props.stillNeeded === 1
-    //       ? <Button id="remove" variant="contained" onClick={() => this.handleRemove(this.props.id)}>Remove from Wishlist</Button>
-    //       : <p>------------------------</p>}
-    //   </div>
-    // </div>
     );
   }
 }

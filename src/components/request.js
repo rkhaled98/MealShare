@@ -16,7 +16,6 @@ class Request extends React.Component {
 
   componentDidMount() {
     db.fetchNeeded((needed) => {
-      console.log('mounting');
       if (needed) {
         const myMap = new Map();
         let acountReceived = 0;
@@ -27,7 +26,6 @@ class Request extends React.Component {
           }
           myMap.set(key, needItem);
         }
-        // this.setState({ needed: myMap });
         this.setState((prevState) => {
           const prevMap = prevState.needed;
           let pcountReceived = 0;
@@ -36,7 +34,7 @@ class Request extends React.Component {
               pcountReceived += 1;
             }
           });
-          console.log(acountReceived, pcountReceived);
+
           if (acountReceived > pcountReceived && pcountReceived !== 0) {
             toastr.options = {
               positionClass: 'toast-top-right',
@@ -62,17 +60,12 @@ class Request extends React.Component {
         stillNeeded.push(wishItem);
       }
     });
-
-
     return (
       <div>
         <div>
-          {console.log(this.state.cart)}
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{this.props.results.map(result => <WishItem name={result.name} sku={result.sku} inSearch={1} />)}</div>
         </div>
-
         <h1 style={{ textAlign: 'center' }}>Wish List</h1>
-        {console.log(this.state.wishlist)}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{stillNeeded.map(item => <WishItem name={item.name} sku={item.sku} id={item.id} stillNeeded={1} />)}</div>
         <h1 style={{ textAlign: 'center' }}>Received</h1>
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>{received.map(item => <WishItem name={item.name} sku={item.sku} />)}</div>
